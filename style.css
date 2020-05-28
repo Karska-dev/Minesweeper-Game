@@ -1,0 +1,27 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.grid {
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: bisque;
+}
+
+.grid div {
+    width: 38px;
+    height: 38px;
+    border: gray solid 1px;
+}
+
+.checked {
+    background-color: forestgreen;
+}
+
+.bomb {
+    background-color: bisque;
+}
+
