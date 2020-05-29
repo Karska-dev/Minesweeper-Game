@@ -1,10 +1,13 @@
 // This version of Minesweeper game was made exactly by tutorial of Ania Kubów from youtube
 const grid = document.querySelector('.grid')
+const status = document.querySelector('#status')
+const flagsLeft = document.querySelector('#flags-left')
 let width = 10
 let bombAmount = 20
 let flags = 0
 let squares = []
 let isGameOver = false
+flagsLeft.innerHTML = bombAmount - flags
 
 function createBoard() {
     // get shuffled game array with random bombs
@@ -16,6 +19,7 @@ function createBoard() {
     for (let i = 0; i < width * width; i++) {
         const square = document.createElement('div')
         square.setAttribute('id', i)
+        square.classList.add('cell')
         square.classList.add(shuffledArray[i])
         grid.appendChild(square)
         squares.push(square)
@@ -70,11 +74,13 @@ function addFlag(square) {
             square.classList.add('flag')
             square.innerHTML='🚩'
             flags++
+            flagsLeft.innerHTML = bombAmount - flags
             checkForWin()
         } else {
             square.classList.remove('flag')
             square.innerHTML=''
             flags--
+            flagsLeft.innerHTML = bombAmount - flags
         }
     }
 }
@@ -148,7 +154,7 @@ function checkSquare(square, currentId) {
 }
 
 function gameOver(square) {
-    console.log('boom!💣')
+    status.innerHTML = 'BOOM!💣 Game Over!'
     isGameOver = true;
 
     // show ALL the bombs
@@ -167,7 +173,7 @@ function checkForWin() {
             matches++
         }
         if (matches === bombAmount) {
-            console.log('Win!')
+            status.innerHTML = 'You Win!'
             isGameOver = true
         }
     }
