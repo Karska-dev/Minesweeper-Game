@@ -1,3 +1,4 @@
+// This version of Minesweeper game was made exactly by tutorial of Ania Kubów from youtube
 const grid = document.querySelector('.grid')
 let width = 10
 let bombAmount = 20
