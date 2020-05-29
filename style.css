@@ -3,7 +3,6 @@
 * {
     margin: 0;
     padding: 0;
-    text-align: center;
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -29,5 +28,19 @@ div.grid {
     display: flex;
     flex-wrap: wrap;
     background-color: bisque;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
 }
 
+#info {
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
+
+#status {
+    text-align: center;
+    font-size: xx-large;
+}
