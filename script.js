@@ -16,6 +16,7 @@ function createBoard() {
     for (let i = 0; i < width * width; i++) {
         const square = document.createElement('div')
         square.setAttribute('id', i)
+        square.classList.add('cell')
         square.classList.add(shuffledArray[i])
         grid.appendChild(square)
         squares.push(square)

@@ -7,6 +7,14 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+div.cell {
+    width: 28px;
+    height: 28px;
+    border: rgb(180, 134, 77) solid 6px;
+    border-left: rgb(247, 210, 165) solid 6px;
+    border-top: rgb(255, 243, 229) solid 6px;
+}
+
 div.checked {
     width: 34px;
     height: 34px;
@@ -15,15 +23,7 @@ div.checked {
     font-size: x-large;
 }
 
-div {
-    width: 28px;
-    height: 28px;
-    border: rgb(180, 134, 77) solid 6px;
-    border-left: rgb(247, 210, 165) solid 6px;
-    border-top: rgb(255, 243, 229) solid 6px;
-}
-
-.grid {
+div.grid {
     width: 400px;
     height: 400px;
     display: flex;
