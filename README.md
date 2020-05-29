@@ -1,0 +1,1 @@
+This version of Minesweeper game was made exactly by tutorial of Ania Kubów from [youtube](https://www.youtube.com/watch?v=rxdGAKRndz8)
