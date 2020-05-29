@@ -3,6 +3,24 @@
 * {
     margin: 0;
     padding: 0;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+div.checked {
+    width: 34px;
+    height: 34px;
+    border: rgb(40, 85, 40) solid 3px;
+    background-color: rgb(96, 129, 96);
+    font-size: x-large;
+}
+
+div {
+    width: 28px;
+    height: 28px;
+    border: rgb(180, 134, 77) solid 6px;
+    border-left: rgb(247, 210, 165) solid 6px;
+    border-top: rgb(255, 243, 229) solid 6px;
 }
 
 .grid {
@@ -10,20 +28,6 @@
     height: 400px;
     display: flex;
     flex-wrap: wrap;
-    background-color: bisque;
-}
-
-.grid div {
-    width: 38px;
-    height: 38px;
-    border: gray solid 1px;
-}
-
-.checked {
-    background-color: forestgreen;
-}
-
-.bomb {
     background-color: bisque;
 }
 
