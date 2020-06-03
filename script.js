@@ -46,17 +46,17 @@ function createBoard() {
             // check left bomb
             if (i > 0 && !isLeftEdge && squares[i - 1].classList.contains('bomb')) total++
             // check up-left bomb
-            if (i > 11 && !isLeftEdge && squares[i - 1 - width].classList.contains('bomb')) total++
+            if (i > 9 && !isLeftEdge && squares[i - 1 - width].classList.contains('bomb')) total++
             // check up bomb
-            if (i > 10 && squares[i - width].classList.contains('bomb')) total++
+            if (i > 9 && squares[i - width].classList.contains('bomb')) total++
             // check up-right bomb
             if (i > 9 && !isRightEdge && squares[i + 1 - width].classList.contains('bomb')) total++
             // check right
-            if (i < 98 && !isRightEdge && squares[i + 1].classList.contains('bomb')) total++
+            if (!isRightEdge && squares[i + 1].classList.contains('bomb')) total++
             // check down-right bomb
-            if (i < 88 && !isRightEdge && squares[i + 1 + width].classList.contains('bomb')) total++
+            if (i < 89 && !isRightEdge && squares[i + 1 + width].classList.contains('bomb')) total++
             // check down bomb
-            if (i < 89 && squares[i + width].classList.contains('bomb')) total++
+            if (i < 90 && squares[i + width].classList.contains('bomb')) total++
             // check down-left bomb
             if (i < 90 && !isLeftEdge && squares[i - 1 + width].classList.contains('bomb')) total++
             squares[i].setAttribute('data', total)
@@ -110,42 +110,50 @@ function checkSquare(square, currentId) {
     const isRightEdge = (currentId % width === width - 1)
     
     setTimeout(() => {
+        // recursively click left cell
         if (currentId > 0 && !isLeftEdge) {
             const newId = squares[parseInt(currentId - 1)].id
             const newSquare = document.getElementById(newId)
             click(newSquare)
         }
+        // recurcively click up-right cell
         if (currentId > 9 && !isRightEdge) {
             const newId =squares[parseInt(currentId) + 1 - width].id
             const newSquare = document.getElementById(newId)
             click(newSquare)
         }
-        if (currentId > 10) {
+        // all top cells 
+        if (currentId > 9) {
             const newId =squares[parseInt(currentId) - width].id
             const newSquare = document.getElementById(newId)
             click(newSquare)
         }
-        if (currentId > 11 && !isLeftEdge) {
+        // all up-left cells
+        if (currentId > 10 && !isLeftEdge) {
             const newId = squares[parseInt(currentId) - 1 - width].id
             const newSquare = document.getElementById(newId)
             click(newSquare)
         }
-        if (currentId < 98 && !isRightEdge) {
+        // all right cells
+        if (currentId < 99 && !isRightEdge) {
             const newId =squares[parseInt(currentId) + 1].id
             const newSquare = document.getElementById(newId)
             click(newSquare)
         }
+        // all down left
         if (currentId < 90 && !isLeftEdge) {
             const newId = squares[parseInt(currentId) - 1 + width].id
             const newSquare = document.getElementById(newId)
             click(newSquare)
         }
-        if (currentId < 88 && !isRightEdge) {
+        // all down right
+        if (currentId < 89 && !isRightEdge) {
             const newId = squares[parseInt(currentId) + 1 + width].id
             const newSquare = document.getElementById(newId)
             click(newSquare)
         }
-        if (currentId < 89) {
+        // all down cells
+        if (currentId < 90) {
             const newId =squares[parseInt(currentId) + width].id
             const newSquare = document.getElementById(newId)
             click(newSquare)
