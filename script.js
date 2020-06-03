@@ -46,17 +46,17 @@ function createBoard() {
             // check left bomb
             if (i > 0 && !isLeftEdge && squares[i - 1].classList.contains('bomb')) total++
             // check up-left bomb
-            if (i > 11 && !isLeftEdge && squares[i - 1 - width].classList.contains('bomb')) total++
+            if (i > 9 && !isLeftEdge && squares[i - 1 - width].classList.contains('bomb')) total++
             // check up bomb
-            if (i > 10 && squares[i - width].classList.contains('bomb')) total++
+            if (i > 9 && squares[i - width].classList.contains('bomb')) total++
             // check up-right bomb
             if (i > 9 && !isRightEdge && squares[i + 1 - width].classList.contains('bomb')) total++
             // check right
-            if (i < 98 && !isRightEdge && squares[i + 1].classList.contains('bomb')) total++
+            if (!isRightEdge && squares[i + 1].classList.contains('bomb')) total++
             // check down-right bomb
-            if (i < 88 && !isRightEdge && squares[i + 1 + width].classList.contains('bomb')) total++
+            if (i < 89 && !isRightEdge && squares[i + 1 + width].classList.contains('bomb')) total++
             // check down bomb
-            if (i < 89 && squares[i + width].classList.contains('bomb')) total++
+            if (i < 90 && squares[i + width].classList.contains('bomb')) total++
             // check down-left bomb
             if (i < 90 && !isLeftEdge && squares[i - 1 + width].classList.contains('bomb')) total++
             squares[i].setAttribute('data', total)
@@ -122,7 +122,7 @@ function checkSquare(square, currentId) {
             const newSquare = document.getElementById(newId)
             click(newSquare)
         }
-        // all top cells >= ? 
+        // all top cells 
         if (currentId > 9) {
             const newId =squares[parseInt(currentId) - width].id
             const newSquare = document.getElementById(newId)
