@@ -163,6 +163,7 @@ function checkSquare(square, currentId) {
 
 function gameOver(square) {
     status.innerHTML = 'BOOM!💣 Game Over!'
+    status.style.visibility = 'visible';
     isGameOver = true;
 
     // show ALL the bombs
@@ -182,6 +183,7 @@ function checkForWin() {
         }
         if (matches === bombAmount) {
             status.innerHTML = 'You Win!'
+            status.style.visibility = 'visible';
             isGameOver = true
         }
     }
