@@ -26,14 +26,25 @@ function createBoard() {
 
         // normal click
         square.addEventListener('click', function (e) {
+            e.preventDefault();
             click(square);
-        })
+            e.stopPropagation();
+            return false;
+        }, false)
 
         // control and left click
         square.oncontextmenu = function(e) {
             e.preventDefault()
             addFlag(square)
         }
+
+        square.addEventListener('touchend', function (e) {
+            
+            addFlag(square);
+            e.preventDefault();
+            e.stopPropagation();
+            return false;
+        }, false)
     }
 
     // add numbers
