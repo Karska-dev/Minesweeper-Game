@@ -1,3 +1,4 @@
+Live is [here](https://karska-dev.github.io/minesweeper/)
 
 This is a [Minesweeper game](https://en.wikipedia.org/wiki/Minesweeper_(video_game)) as you may remember it from Microsoft Windows standard games.
 Design a bit different. Mint pastel color scheme.
