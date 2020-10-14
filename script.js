@@ -69,14 +69,14 @@ createBoard()
 // add Flag with the right click
 function addFlag(square) {
     if (isGameOver) return
-    if (!square.classList.contains('checked') && (flags < bombAmount)) {
-        if (!square.classList.contains('flag')) {
+    if (!square.classList.contains('checked') && (flags <= bombAmount)) {
+        if (!square.classList.contains('flag') && (flags < bombAmount)) {
             square.classList.add('flag')
             square.innerHTML='🚩'
             flags++
             flagsLeft.innerHTML = bombAmount - flags
             checkForWin()
-        } else {
+        } else if (square.classList.contains('flag')){
             square.classList.remove('flag')
             square.innerHTML=''
             flags--
